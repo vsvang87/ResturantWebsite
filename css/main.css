@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  letter-spacing: 0.05rem;
+}
+:root {
+  --first-color: #668ba4;
+  --second-color: #97cba9;
+  --third-color: #dde0ab;
+  --fourth-color: #d9dad7;
+
+  --fs-title: 4rem;
+  --fs-subtitle: 2.5rem;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+}
+.container {
+  width: min(85%);
+  margin-inline: auto;
+}
+header {
+  background: var(--first-color);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+.nav-list li {
+  padding: 1rem;
+  list-style-type: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.nav-list li:hover {
+  background: var(--second-color);
+}
+.nav-list li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--fourth-color);
+}
+.logo a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--third-color);
+  font-weight: bold;
+}
+.view-height {
+  min-height: 30vh;
+}
+/* Section 1, Background Image */
+.bg-img {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section-1::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/tim-toomey-pe9dvM1rQkM-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(40%);
+}
+
+.intro-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fourth-color);
+  font-size: var(--fs-title);
+}
+/* Section 2, Category */
+.section-2 {
+  background: var(--first-color);
+}
+.section-2 h1 {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--fourth-color);
+  font-size: var(--fs-subtitle);
+}
+.category-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-content a {
+  text-decoration: none;
+  padding: 2rem 3rem;
+  margin: 0 1rem;
+  color: var(--third-color);
+  border: 1px solid var(--fourth-color);
+  font-size: 1.5rem;
+}
+
+.section-3::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/eiliv-aceron-DspT8Smoc0k-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(40%);
+}
+.visit-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-5 {
+  background-image: url(/images/alice-pasqual-a2scGjpiI5E-unsplash.jpg);
+}
+/* Media Query */
+@media (max-width: 900px) {
+  .navbar {
+    width: 300px;
+    height: 100%;
+    background-color: #262626;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+    z-index: 2;
+  }
+
+  .change {
+    right: 0;
+  }
+
+  .hamburger-menu {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--second-color);
+    transition: all 0.8s;
+  }
+
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+  }
+
+  .change .line-2 {
+    opacity: 0;
+  }
+
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -6px);
+  }
+
+  .nav-list {
+    text-align: right;
+    flex-direction: column;
+  }
+
+  .nav-item {
+    list-style: none;
+    margin: 25px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-size: 22px;
+    color: #eee;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0;
+  }
+
+  .nav-link::before,
+  .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--third-color);
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+    transform-origin: right;
+  }
+
+  .nav-link::before {
+    top: 0;
+    transform-origin: left;
+  }
+
+  .nav-link:hover::before,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}

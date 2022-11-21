@@ -5,11 +5,12 @@
   font-size: 100%;
   letter-spacing: 0.05rem;
 }
+
 :root {
   --first-color: #668ba4;
   --second-color: #97cba9;
   --third-color: #dde0ab;
-  --fourth-color: #d9dad7;
+  --fourth-color: #fff;
 
   --fs-title: 4rem;
   --fs-subtitle: 2.5rem;
@@ -55,7 +56,7 @@ nav {
   font-weight: bold;
 }
 .view-height {
-  min-height: 30vh;
+  min-height: 25vh;
 }
 /* Section 1, Background Image */
 .bg-img {
@@ -93,15 +94,19 @@ nav {
   color: var(--fourth-color);
   font-size: var(--fs-title);
 }
+
 /* Section 2, Category */
 .section-2 {
   background: var(--first-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .section-2 h1 {
   text-align: center;
-  padding: 3rem 0;
   color: var(--fourth-color);
   font-size: var(--fs-subtitle);
+  margin-bottom: 1rem;
 }
 .category-content {
   display: flex;
@@ -115,8 +120,14 @@ nav {
   color: var(--third-color);
   border: 1px solid var(--fourth-color);
   font-size: 1.5rem;
+  transition: 0.2s ease-in-out;
 }
-
+.category-content a:hover {
+  background: var(--third-color);
+  color: var(--second-color);
+  transform: scale(1.1);
+}
+/* Section 3, Address and Hours */
 .section-3::before {
   content: "";
   position: absolute;
@@ -137,10 +148,125 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: var(--fourth-color);
+  font-size: 1.5rem;
+}
+.address {
+  font-size: 3rem;
+}
+.hours-contact-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.column-1 {
+  width: 50%;
+}
+.underline {
+  margin-bottom: 1rem;
+}
+.underline::after {
+  content: "";
+  display: block;
+  background: var(--second-color);
+  height: 1px;
+  width: 40%;
+}
+.section-4 {
+  background: var(--second-color);
+  font-size: 1.5rem;
+  color: var(--fourth-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location-content {
+  font-size: var(--fs-subtitle);
+  font-style: italic;
+  text-transform: uppercase;
+}
+/* Section 5, Reviews */
+.section-5::before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/vinitha-v-LPnJ146r9Mg-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(40%);
+}
+.section-5 h1 {
+  position: relative;
+  color: var(--fourth-color);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.review-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  place-items: center;
+  color: var(--fourth-color);
+  line-height: 1.8rem;
 }
 
-.section-5 {
-  background-image: url(/images/alice-pasqual-a2scGjpiI5E-unsplash.jpg);
+/* Footer */
+footer {
+  background: var(--first-color);
+  padding-top: 2rem;
+  min-height: 40vh;
+}
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+}
+.footer-column {
+  width: 48%;
+  color: var(--fourth-color);
+}
+.footer-column h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  text-transform: uppercase;
+}
+.get-in-touch p {
+  padding-bottom: 0.5rem;
+}
+
+.social-contact i {
+  font-size: 1.5rem;
+  color: var(--second-color);
+  padding: 0 0.5rem;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+input,
+textarea {
+  margin-bottom: 1rem;
+  width: 80%;
+  outline: none;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  background: var(--second-color);
+  border: none;
+  border-radius: 1px;
+  color: var(--fourth-color);
+  cursor: pointer;
 }
 /* Media Query */
 @media (max-width: 900px) {

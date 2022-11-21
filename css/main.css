@@ -112,6 +112,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .category-content a {
   text-decoration: none;
@@ -227,6 +228,8 @@ footer {
 .footer-content {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .footer-column {
   width: 48%;
@@ -366,5 +369,27 @@ textarea {
   .nav-link:hover::before,
   .nav-link:hover::after {
     transform: scaleX(1);
+  }
+  .category-content a {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 830px) {
+  .section-2 h1 {
+    font-size: 2rem;
+  }
+  footer {
+    min-height: 60vh;
+  }
+  .footer-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .footer-column {
+    text-align: center;
+    width: 100%;
+  }
+  .form {
+    margin-top: 2rem;
   }
 }
